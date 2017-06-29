@@ -11,7 +11,7 @@ class Item extends Model
 
     }
     public function restaurant(){
-        return $this->belongsTo('App\Restaraunt');
+        return $this->belongsTo('App\Restaurant');
     }
 }
 
