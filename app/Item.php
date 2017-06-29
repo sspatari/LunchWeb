@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Item extends Model
 {
     public function items() {
-        return $this->HasMany('App\Orders_item');
+        return $this->HasMany('App\OrderItem');
 
     }
     public function restaurant(){
