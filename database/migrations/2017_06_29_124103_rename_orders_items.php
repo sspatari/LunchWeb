@@ -13,8 +13,6 @@ class RenameOrdersItems extends Migration
     public function up()
     {
         Schema::rename('orders_items', 'order_items');
-
-        Schema::dropIfExists('orders_items');
     }
 
     /**
@@ -24,6 +22,6 @@ class RenameOrdersItems extends Migration
      */
     public function down()
     {
-        //
+        Schema::rename('order_items', 'orders_items');
     }
 }
