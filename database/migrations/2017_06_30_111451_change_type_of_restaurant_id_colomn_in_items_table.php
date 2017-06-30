@@ -29,7 +29,7 @@ class ChangeTypeOfRestaurantIdColomnInItemsTable extends Migration
     {
         Schema::table('items', function (Blueprint $table)
         {
-            $table->integer('restaurant_id')->change();
+            $table->String('restaurant_id')->change();
         });
     }
 }
