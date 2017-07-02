@@ -49,6 +49,31 @@ class AddNewForeignKeys extends Migration
      */
     public function down()
     {
-        //
+      Schema::table('items', function($table) {
+          $table->dropForeign('items_restaurant_id_foreign');
+      });
+      
+      Schema::table('items', function($table) {
+          $table->integer('restaurant_id')->signed()->change();
+      });
+
+      Schema::table('orders', function($table) {
+          $table->dropForeign('orders_user_id_foreign');
+      });
+
+      Schema::table('orders', function($table) {
+          $table->integer('user_id')->signed()->change();
+      });
+
+      Schema::table('order_items', function($table) {
+          $table->dropForeign('order_items_user_id_foreign');
+
+          $table->dropForeign('order_items_order_id_foreign');
+      });
+
+      Schema::table('order_items', function($table) {
+          $table->integer('user_id')->signed()->change();
+          $table->integer('order_id')->signed()->change();
+      });
     }
 }
