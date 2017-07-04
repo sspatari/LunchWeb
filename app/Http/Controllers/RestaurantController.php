@@ -10,4 +10,9 @@ class RestaurantController extends Controller
 
         return view('dashboard');
     }
+
+    public function post(Request $request) {
+
+        dd($request->input('quantities'),$request->input('names'), $request->input('prices'));
+    }
 }

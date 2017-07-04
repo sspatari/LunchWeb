@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/dash', 'RestaurantController@showmydash')->name('mydash');
+Route::post('/post-user-orders', 'RestaurantController@post')->name('post');
